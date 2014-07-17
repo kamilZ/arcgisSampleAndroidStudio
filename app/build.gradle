@@ -27,8 +27,14 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile fileTree(dir: 'libs/armeabi', include: ['*.jar'])
-    compile fileTree(dir: 'libs/armeabi-v7a', include: ['*.jar'])
-    compile fileTree(dir: 'libs/x86', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.+'
+}
+
+
+task generateNativeLib(type: Zip, description: 'create a jar archive of the native libs') {
+    destinationDir file("$buildDir/../libs")
+    baseName 'lib'
+    extension 'jar'
+    from fileTree(dir: 'libs', include: '**/*.so')
+    into 'lib/'
 }
