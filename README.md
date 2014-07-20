@@ -11,14 +11,18 @@ It is a basic application that integrates the free version of ArcGIS android sdk
 What happened to the. So? 
 -------------------------
 
-They have been compressed to .jar files. 
+They have been compressed to libs.jar. 
 
  
 ```java
-    Example x86.jar structure:
+    libs.jar files structure:
     
+    lib/armeabi/ibruntimecore_java.so
+    lib/armeabi-v7a/ibruntimecore_java.so
     lib/x86/ibruntimecore_java.so
 ```
+
+You can use **generateNativeLib**  gradle custom task to generate *libs.jar* again.
 
 
 Example
